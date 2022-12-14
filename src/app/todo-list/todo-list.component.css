@@ -1,62 +1,60 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.top {
+    width: 40%;
+    position: relative;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 0 10px 40px rgb(89, 15, 110);
+    color:darkorchid;
+    background-color:#f3504e;
+    border-radius: 8px;
 
 }
 
-body {
-    background-color: #c37171;
-    font-family:'Times New Roman', Times, serif
-}
-
-.project {
-    background: #c37171;
+.todo-list {
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items:center;
-    flex-direction: column;
-    height: 50vh;
+    padding: 20px 0;
 }
 
-.title {
-    font-size: 50px;
-    font-weight: 200px;
-    color: #550b46;
-    letter-spacing: 4px;
+input{
+    font-size: 22px;
+    width: 90%;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background: rgb(208, 174, 240);
+    padding: 11px;
 }
 
-.todo {
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0px 10px 40px #ffc0cb;
-    border-radius: 10px;
-}
-
-.space {
-    display: grid;
-    grid-template-columns: 5fr 1fr;
-    gap: 5px;
-}
-
-.add-todo {
-    font-size: 30px;
+.btn {
+    background-color:rgb(165, 180, 180);
+    border-radius: 5px;
     border: none;
-    border-radius: 10px;
-    cursor: text;
-    background-color: antiquewhite;
-
-}
-
-.add-list {
+    padding: 7px;
+    color: rgb(0, 0, 0);
     cursor: pointer;
-    border: none;
-    border-radius: 7px;
-    background-color:antiquewhite;
-}
-
-.delete {
-    border: none;
-    background-color: antiquewhite;
 
 }
+
+h3 {
+    text-align: center;
+    padding: 10px 0;
+    font-size: 30px;
+}
+
+
+
+.bottom{
+    width: 40%;
+    position: relative;
+    padding: 10px;
+    margin: 20px 0;
+    box-shadow: 0 10px 40px rgb(122, 21, 144);
+    background-color:rgb(35, 134, 180);
+    border-radius: 8px;
+}
+
