@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class TodoListComponent {
 
+  reminder: string = ''
+
+  list: any = []
+
+  addToList(): void {
+    this.list.push()
+  }
 }
