@@ -17,12 +17,25 @@ export class TodoListComponent {
 
   addToList(): void {
     const newItem: TodoItem = new TodoItem(
+      this.list.length ,
       this.title,
       this.details,
       this.completeBy, 
       this.urgent);
 
-      console.log(newItem);
+      console.log(newItem.id);
       this.list.push(newItem);
+  }
+
+  deleteFromList(item: any): void {
+    // for ( let index of this.list){
+    //   if (card.id === this.cardNumber)
+    //     card.symbol = this.newSymbol;
+    // }
+
+    // this.list.splice
+
+    console.log(this.list.indexOf(item))
+    this.list.splice(this.list.indexOf(item), 1)
   }
 }

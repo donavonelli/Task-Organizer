@@ -1,5 +1,6 @@
 export class TodoItem {
 
+    id: number;
     title: string;
     details: string;
     completeBy: string;
@@ -7,7 +8,8 @@ export class TodoItem {
 
     // set up our constructor
     // MUST do so properly for this file to compile
-    constructor(title: string, details: string, completeBy: string, urgent:boolean) {
+    constructor(id: number, title: string, details: string, completeBy: string, urgent:boolean) {
+        this.id = id;
         this.title = title;
         this.details = details;
         this.completeBy = completeBy;
