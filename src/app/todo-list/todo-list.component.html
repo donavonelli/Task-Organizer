@@ -7,7 +7,7 @@
         <div class="space">
             <!-- <label for="title">title2: </label> -->
             <input [(ngModel)]="title" id="title" name="title" class="add-todo" type="text"  placeholder="Enter to-do">
-            <button class="add-list" (click)="addToList()">Add</button>
+            <!-- <button class="add-list" (click)="addToList()">Add</button> -->
         </div>
         
         <!-- <div> -->
@@ -45,6 +45,10 @@
     </div>
 </main>
 
+<app-form (sendItemToList)= "addToList($event)">
+
+
+</app-form>
 <!-- <body>
     
     <div class="top">

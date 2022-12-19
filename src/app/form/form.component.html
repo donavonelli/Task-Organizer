@@ -1,0 +1,48 @@
+<main>
+    <form [formGroup]="addForm" class="addForm">
+
+        <label for="title" class="formLabel">Title</label>
+        <input type="text" 
+               formControlName="title" 
+               class="formField" 
+               name="title" 
+               id="title" 
+               placeholder="Title of Task">
+        <p class="invalid" *ngIf="title!.invalid && (title!.touched || title!.dirty)">
+            <span *ngIf="title!.errors?.['required']">Title is required!</span>
+            <span *ngIf="title!.errors?.['minlength'] 
+                      || title!.errors?.['maxlength']">Title must be 3-20 characters!</span>
+        </p>
+
+        <label for="details" class="formLabel">Details</label>
+        <input type="text" 
+               formControlName="details" 
+               class="formField" 
+               name="details" 
+               id="details" 
+               placeholder="Enter details of your task">
+
+
+        <label for="completeBy" class="formLabel">Complete By</label>
+        <input type="date" 
+               formControlName="completeBy" 
+               class="formField" 
+               name="completeBy" 
+               id="completeBy" 
+               >
+
+
+        <label for="urgent" class="formLabel">Urgent?</label>
+        <input type="checkbox" 
+               formControlName="urgent" 
+               class="formField" 
+               name="urgent" 
+               id="urgent" 
+               >
+        
+
+        <button type="submit" (click)="onSubmit()" [disabled]="addForm.invalid" class="submitButton">Add</button>
+
+    </form>
+
+</main>

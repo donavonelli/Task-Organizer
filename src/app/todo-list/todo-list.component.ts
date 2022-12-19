@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { TodoItem } from '../models/todo-item';
 
 @Component({
@@ -15,15 +15,15 @@ export class TodoListComponent {
 
   list: any = []
 
-  addToList(): void {
-    const newItem: TodoItem = new TodoItem(
-      this.list.length ,
-      this.title,
-      this.details,
-      this.completeBy, 
-      this.urgent);
+  addToList(newItem: any): void {
+    // const newItem: TodoItem = new TodoItem(
+    //   this.list.length ,
+    //   this.title,
+    //   this.details,
+    //   this.completeBy, 
+    //   this.urgent);
 
-      console.log(newItem.id);
+      console.log(newItem);
       this.list.push(newItem);
   }
 
@@ -38,4 +38,8 @@ export class TodoListComponent {
     console.log(this.list.indexOf(item))
     this.list.splice(this.list.indexOf(item), 1)
   }
+
+  @Output() sendItemToComplete = new EventEmitter<any>();
+
+  
 }
