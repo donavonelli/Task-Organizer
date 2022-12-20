@@ -3,21 +3,30 @@
     padding: 0px;
 }
 
-.top {
-    width: 40%;
-    position: relative;
-    padding: 10px;
-    margin: 20px 0;
-    box-shadow: 0 10px 40px rgb(89, 15, 110);
-    color:darkorchid;
-    background-color:#f3504e;
-    border-radius: 8px;
+body {
+    background: linear-gradient(126deg, rgb(175, 138, 19) 10%, #ce2323 60%, #cb36b5 90%);
+    background-repeat:no-repeat;
+    height: 100vh;
+}
 
+h1{
+    text-align: center;
+    padding: 20px;
+}
+.top {
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgb(200, 2, 254);
+    color:darkorchid;
+    background-color:#05204a;
+    border-radius: 8px;
 }
 
 .todo-list {
-    width: 100%;
     display: flex;
+    justify-content: center;
     padding: 20px 0;
 }
 
@@ -31,30 +40,76 @@ input{
 }
 
 .btn {
-    background-color:rgb(165, 180, 180);
+    background-color: rgb(114, 201, 47);
+    border-radius: 5px;
+    border: none;
+    margin: 5px;
+    padding: 8px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+}
+
+.btn1 {
+    background-color: rgb(81, 170, 12);
     border-radius: 5px;
     border: none;
     padding: 7px;
+    margin: 5px;
     color: rgb(0, 0, 0);
     cursor: pointer;
+    float: right;
+}
 
+.btn2 {
+    background-color:rgb(255, 196, 0);
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    margin: 5px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    float: right;
+}
+
+.btn3 {
+    background-color:#f13d1e;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    margin: 5px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    float: right;
 }
 
 h3 {
     text-align: center;
-    padding: 10px 0;
+    padding: 10px;
     font-size: 30px;
 }
 
-
+ul {
+    list-style: none;
+}
 
 .bottom{
-    width: 40%;
-    position: relative;
-    padding: 10px;
-    margin: 20px 0;
+    width: 30%;
+    margin-left: 35%;
+    margin-right: 35%;
+    padding-bottom: 30px;
     box-shadow: 0 10px 40px rgb(122, 21, 144);
     background-color:rgb(35, 134, 180);
     border-radius: 8px;
+    float: right;
 }
 
+.delete-btn {
+    background-color:#f13d1e;
+    border-radius: 5px;
+    border: none;
+    padding: 7px;
+    margin-right: 35px;
+    color: rgb(0, 0, 0);
+    cursor: pointer;
+    float: right;
+}
