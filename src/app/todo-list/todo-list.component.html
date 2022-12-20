@@ -20,7 +20,7 @@
                         <td style="width: 50%;">{{item.title}}</td>
                         <td><button id="edit">Edit</button>
                             <button (click)="deleteFromList(item)">Delete</button>
-                            <button >Complete</button></td>
+                            <button (click)="finishItem(item)" >Complete</button></td>
                     </tbody>
                 </table>
             </ng-container>

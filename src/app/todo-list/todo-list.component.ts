@@ -41,5 +41,8 @@ export class TodoListComponent {
 
   @Output() sendItemToComplete = new EventEmitter<any>();
 
-  
+  finishItem(item: any): void{
+
+    this.sendItemToComplete.emit(item)
+  }
 }

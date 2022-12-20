@@ -1,6 +1,8 @@
 <body>
     <section id="section-body">
-        <app-todo-list id="to-do-component"></app-todo-list>
-        <app-finished-list id="finished-component"></app-finished-list>
+        <app-todo-list id="to-do-component"
+                        (sendItemToComplete)="addToCompleteList($event)"></app-todo-list>
+        <app-finished-list id="finished-component"
+            [finishedList] = 'finishedList'></app-finished-list>
     </section>
 </body>
