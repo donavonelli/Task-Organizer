@@ -15,57 +15,58 @@ h1{
 }
 .top {
     width: 30%;
-    margin-left: 35%;
-    margin-right: 35%;
-    padding: 20px;
-    box-shadow: 0 10px 40px rgb(200, 2, 254);
+    margin: auto;
+    padding: 30px;
+    padding-bottom: 40px;
+    box-shadow: 0 10px 40px #e8ef1b;
     color:darkorchid;
     background-color:#05204a;
-    border-radius: 8px;
+    border-radius: 12px;
+    position: relative;
 }
 
-.todo-list {
+.input {
     display: flex;
     justify-content: center;
     padding: 20px 0;
 }
 
-input{
-    font-size: 22px;
-    width: 90%;
+input {
+    font-size: 30px;
+    width: 100%;
     border: 1px solid rgb(0, 0, 0);
     border-radius: 5px;
     background: rgb(208, 174, 240);
-    padding: 11px;
+    padding: 8px;
 }
 
 .btn {
-    background-color: rgb(114, 201, 47);
+    background-color: #72c92f;
     border-radius: 5px;
     border: none;
-    margin: 5px;
-    padding: 8px;
+    margin: 0 5px;
+    padding:  1px 8px;
     color: rgb(0, 0, 0);
     cursor: pointer;
 }
 
 .btn1 {
-    background-color: rgb(81, 170, 12);
+    background-color: #72c92f;
     border-radius: 5px;
     border: none;
     padding: 7px;
-    margin: 5px;
+    margin: 0px 5px;
     color: rgb(0, 0, 0);
     cursor: pointer;
     float: right;
 }
 
 .btn2 {
-    background-color:rgb(255, 196, 0);
+    background-color:#ffc400;
     border-radius: 5px;
     border: none;
     padding: 7px;
-    margin: 5px;
+    margin: 0px 5px;
     color: rgb(0, 0, 0);
     cursor: pointer;
     float: right;
@@ -76,10 +77,15 @@ input{
     border-radius: 5px;
     border: none;
     padding: 7px;
-    margin: 5px;
+    margin: 0px 5px;
     color: rgb(0, 0, 0);
     cursor: pointer;
     float: right;
+}
+
+.notcomplete {
+    margin: 10px 15;
+    
 }
 
 h3 {
@@ -92,24 +98,36 @@ ul {
     list-style: none;
 }
 
+li {
+    background-color: antiquewhite;
+    width: auto;
+    padding: 10px 0;
+    margin: auto;
+    font-size: 30px;
+    border-radius: 12px;
+    list-style: none;
+    border: 1px solid white;
+}
+
 .bottom{
     width: 30%;
-    margin-left: 35%;
-    margin-right: 35%;
-    padding-bottom: 30px;
+    margin: auto;
+    padding: 30px ;
+    padding-bottom: 40px;
     box-shadow: 0 10px 40px rgb(122, 21, 144);
-    background-color:rgb(35, 134, 180);
-    border-radius: 8px;
-    float: right;
+    background-color:#544ddf;
+    border-radius: 12px;
+    position: relative;
+    
 }
 
 .delete-btn {
     background-color:#f13d1e;
     border-radius: 5px;
     border: none;
+    margin: 0px 5px;
     padding: 7px;
-    margin-right: 35px;
-    color: rgb(0, 0, 0);
+    color: #000000;
     cursor: pointer;
     float: right;
 }
