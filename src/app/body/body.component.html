@@ -14,17 +14,11 @@
         <div class="todo">
     
             <div class="space">
-                <!-- <label for="title">title2: </label> -->
-                <!-- <input [(ngModel)]="title" id="title" name="title" class="add-todo" type="text"  placeholder="Enter to-do"> -->
                 <button class="btn" (click)="openTodoForm()"><i class="material-icons">add_circle_outline</i></button>
-                <!-- <button class="add-list" (click)="addToList()">Add</button> -->
             </div>
             
-            <!-- <div> -->
-    
-                <!-- Make ngif that will make the table appear -->
+
                 <ng-container *ngIf="todoList.length >= 1">
-                    <!-- <h3>To Do List</h3> -->
                     <ul class="notcomplete">
                         <ng-container *ngFor="let item of todoList">
                             <li>
@@ -47,35 +41,10 @@
                             </li>
                         </ng-container>
                     </ul>
-                    <!-- <ng-container *ngFor="let item of todoList">
-                    <table class="table">
-                        <tbody id="tbody">
-                            <td style="width: 50%;">{{item.title}}</td>
-                            <td><button id="edit">Edit</button>
-                                <button (click)="finishItem(item)" >Complete</button>
-                                <button class="btn2"><i class="material-icons">draw</i></button>
-                                <button class="btn3" (click)="deleteFromTodoList(item)"><i class="material-icons">delete_forever</i></button>
-                                <button class="btn1" (click)="finishItem(item)"><i class="material-icons">check_mark </i></button>
-                            </td>
-                        </tbody>
-                    </table>
-                </ng-container> -->
+
                 </ng-container>
     
-                <!-- <table>
-                    <tbody id="tbody">
-                        <td style="width: 50%;">Watch movie</td>
-                        <td><button id="edit">Edit</button>
-                            <button >Delete</button>
-                            <button >Complete</button></td>
-                        
-                        <td style="width: 50%;">Watch movie</td>
-                        <td><button id="edit">Edit</button>
-                            <button >Delete</button>
-                            <button >Complete</button></td>
-                    </tbody>
-                </table> -->
-            <!-- </div> -->
+
         </div>
         </form>
         </div>
@@ -89,14 +58,10 @@
 <div class="todo">
 
     <div class="space">
-        <!-- <label for="title">title2: </label> -->
         <button class="btn" (click)="openFinishedForm()"><i class="material-icons">add_circle_outline</i></button>
-        <!-- <button class="add-list" (click)="addToList()">Add</button> -->
     </div>
     
-    <!-- <div> -->
 
-        <!-- Make ngif that will make the table appear -->
         <ng-container *ngIf="finishedList.length >= 1">
             <ng-container *ngFor="let item of finishedList">
             <table>
@@ -111,20 +76,7 @@
         </ng-container>
         </ng-container>
 
-        <!-- <table>
-            <tbody id="tbody">
-                <td style="width: 50%;">Watch movie</td>
-                <td><button id="edit">Edit</button>
-                    <button >Delete</button>
-                    <button >Complete</button></td>
-                
-                <td style="width: 50%;">Watch movie</td>
-                <td><button id="edit">Edit</button>
-                    <button >Delete</button>
-                    <button >Complete</button></td>
-            </tbody>
-        </table> -->
-    <!-- </div> -->
+
 </div>
 </form>
 </div>
