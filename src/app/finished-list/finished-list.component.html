@@ -1,10 +1,51 @@
-<!--div class="project">
-    <h2 class="title">Finished List</h2>
-<div class="todo">
-    <div class="space">
-        <input type="Add To Finished List" class="add-todo">
-        <button class="add-list">Add</button>
-        <div class="delete">Delete</div>
+<main>
+    <div class="project">
+        <h2 class="title">Finished Lists</h2>
+    <form #todoListForm>
+    <div class="todo">
+
+        <div class="space">
+            <!-- <label for="title">title2: </label> -->
+            <input [(ngModel)]="title" id="title" name="title" class="add-todo" type="text"  placeholder="Enter to-do">
+            <!-- <button class="add-list" (click)="addToList()">Add</button> -->
+        </div>
+        
+        <!-- <div> -->
+
+            <!-- Make ngif that will make the table appear -->
+            <ng-container *ngIf="finishedList.length >= 1">
+                <ng-container *ngFor="let item of finishedList">
+                <table>
+                    <tbody id="tbody">
+                        <td style="width: 50%;">{{item.title}}</td>
+                        <td><button id="edit">Edit</button>
+                            <button (click)="deleteFromList(item)">Delete</button>
+                            <button (click)="finishItem($event)" >Complete</button></td>
+                    </tbody>
+                </table>
+            </ng-container>
+            </ng-container>
+
+            <!-- <table>
+                <tbody id="tbody">
+                    <td style="width: 50%;">Watch movie</td>
+                    <td><button id="edit">Edit</button>
+                        <button >Delete</button>
+                        <button >Complete</button></td>
+                    
+                    <td style="width: 50%;">Watch movie</td>
+                    <td><button id="edit">Edit</button>
+                        <button >Delete</button>
+                        <button >Complete</button></td>
+                </tbody>
+            </table> -->
+        <!-- </div> -->
     </div>
-</div>
-</div-->
+    </form>
+    </div>
+</main>
+
+<app-form (sendItemToList)= "addToList($event)">
+
+
+</app-form>
