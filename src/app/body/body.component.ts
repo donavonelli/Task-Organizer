@@ -1,36 +1,94 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, ViewChild } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
+import { FormComponent } from '../form/form.component';
 @Component({
   selector: 'app-body',
   templateUrl: './body.component.html',
   styleUrls: ['./body.component.css']
 })
-export class BodyComponent implements OnInit {
+export class BodyComponent  {
 
-  private finishedListv2 = new BehaviorSubject<any>([]);
+  title: string = ''
+  details: string = ''
+  completeBy: string = ''
+  urgent: boolean = false
 
-  finishedListv3 = this.finishedListv2.asObservable();
-
+  todoList: any = []
   finishedList: any = []
-  todoList: any =[]
 
-  ngOnInit(): void {
-      
-  }
-
-  @Output() sendItemToComplete = new EventEmitter<any>();
-
-  addToCompleteList(item: any): void {
+  addToTodoList(newItem: any): void {
     // const newItem: TodoItem = new TodoItem(
-    //   this.list.length ,
+    //   this.todoList.length ,
     //   this.title,
     //   this.details,
     //   this.completeBy, 
     //   this.urgent);
-
-      console.log(item);
-      console.log(item);
-      this.finishedList.push(item)
-      console.log(this.finishedList);
+    if(newItem.finished){
+      this.finishedList.push(newItem.value)
+    } else{
+      console.log(newItem);
+      this.todoList.push(newItem.value);
+    }
   }
+
+  itemToEdit: any;
+  editTodoItem(newItem:any): void{
+    this.itemToEdit = newItem
+    this.openTodoForm();
+    this.todoList.splice(this.todoList.indexOf(newItem), 1)
+  }
+
+  deleteFromTodoList(item: any): void {
+    this.todoList.splice(this.todoList.indexOf(item), 1)
+  }
+
+  finishItem(item: any): void{
+    this.finishedList.push(item)
+    this.todoList.splice(this.todoList.indexOf(item), 1)
+  }
+
+  // FINISHED LISTS
+  addToFinishedList(newItem: any): void {
+      this.finishedList.push(newItem);
+  }
+
+  editFinishedItem(newItem:any): void{
+    this.itemToEdit = newItem
+    this.openFinishedForm();
+  }
+
+  deleteFromFinishedList(item: any): void {
+    this.finishedList.splice(this.finishedList.indexOf(item), 1)
+  }
+
+  unfinishItem(item: any): void{
+    this.todoList.push(item)
+    this.finishedList.splice(this.finishedList.indexOf(item), 1)
+
+  }
+
+  formStyle: string = '';
+
+  constructor(){
+    this.formStyle = 'form-container-hidden'
+  }
+
+  openTodoForm() {
+    this.isFinishedv2 = false
+    this.formStyle = 'form-container-shown'
+  }
+
+  openToEdit(){
+    this.formStyle = 'form-container-shown'
+  }
+
+  openFinishedForm() {
+    this.isFinishedv2 = true
+    this.formStyle = 'form-container-shown'
+  }
+  closeForm(){
+    this.formStyle = 'form-container-hidden'
+  }
+  
+  isFinishedv2: boolean = false
 }

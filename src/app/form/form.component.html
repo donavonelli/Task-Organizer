@@ -1,5 +1,5 @@
 <main>
-    <form [formGroup]="addForm" class="addForm">
+    <form [formGroup]="addForm" class="addForm" id="addForm">
 
         <label for="title" class="formLabel">Title</label>
         <input type="text" 
@@ -20,7 +20,7 @@
                class="formField" 
                name="details" 
                id="details" 
-               placeholder="Enter details of your task">
+               placeholder="Enter details of your task"> 
 
 
         <label for="completeBy" class="formLabel">Complete By</label>
@@ -42,7 +42,7 @@
         
 
         <button type="submit" (click)="onSubmit()" [disabled]="addForm.invalid" class="submitButton">Add</button>
-
+        <button (click) ='onClose()'>Close</button>
     </form>
 
 </main>

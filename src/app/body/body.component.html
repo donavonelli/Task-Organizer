@@ -1,8 +1,140 @@
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project2</title> <link rel="stylesheet">
+    <link rel="stylesheet" link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
 <body>
-    <section id="section-body">
-        <app-todo-list id="to-do-component"
-                        (sendItemToComplete)="addToCompleteList($event)"></app-todo-list>
-        <app-finished-list id="finished-component"
-            [finishedList] = 'finishedList'></app-finished-list>
-    </section>
+    <!-- TO DO LIST -->
+    <main id="to-do-component">
+        <div class="project">
+            <h2 class="title">To Do Lists</h2>
+        <form #todoListForm>
+        <div class="todo">
+    
+            <div class="space">
+                <!-- <label for="title">title2: </label> -->
+                <!-- <input [(ngModel)]="title" id="title" name="title" class="add-todo" type="text"  placeholder="Enter to-do"> -->
+                <button class="btn" (click)="openTodoForm()"><i class="material-icons">add_circle_outline</i></button>
+                <!-- <button class="add-list" (click)="addToList()">Add</button> -->
+            </div>
+            
+            <!-- <div> -->
+    
+                <!-- Make ngif that will make the table appear -->
+                <ng-container *ngIf="todoList.length >= 1">
+                    <!-- <h3>To Do List</h3> -->
+                    <ul class="notcomplete">
+                        <ng-container *ngFor="let item of todoList">
+                            <li>
+                                <h4>{{item.title}}</h4>
+                                <ng-container *ngIf="item.urgent">
+                                    <h5>{{item.urgent}}</h5>
+                                </ng-container>
+                                <ng-container *ngIf="item.completeBy">
+                                    <h4>{{item.completeBy}}</h4>
+                                </ng-container>
+                                <ng-container *ngIf="item.details">
+                                    <p>{{item.details}}</p>
+                                </ng-container>
+                                <div class="button-container">
+
+                                    <button class="btn2" (click)="editTodoItem(item)"><i class="material-icons">draw</i></button>
+                                    <button class="btn3" (click)="deleteFromTodoList(item)"><i class="material-icons">delete_forever</i></button>
+                                    <button class="btn1" (click)="finishItem(item)"><i class="material-icons" >draw </i></button>
+                                </div>
+                            </li>
+                        </ng-container>
+                    </ul>
+                    <!-- <ng-container *ngFor="let item of todoList">
+                    <table class="table">
+                        <tbody id="tbody">
+                            <td style="width: 50%;">{{item.title}}</td>
+                            <td><button id="edit">Edit</button>
+                                <button (click)="finishItem(item)" >Complete</button>
+                                <button class="btn2"><i class="material-icons">draw</i></button>
+                                <button class="btn3" (click)="deleteFromTodoList(item)"><i class="material-icons">delete_forever</i></button>
+                                <button class="btn1" (click)="finishItem(item)"><i class="material-icons">check_mark </i></button>
+                            </td>
+                        </tbody>
+                    </table>
+                </ng-container> -->
+                </ng-container>
+    
+                <!-- <table>
+                    <tbody id="tbody">
+                        <td style="width: 50%;">Watch movie</td>
+                        <td><button id="edit">Edit</button>
+                            <button >Delete</button>
+                            <button >Complete</button></td>
+                        
+                        <td style="width: 50%;">Watch movie</td>
+                        <td><button id="edit">Edit</button>
+                            <button >Delete</button>
+                            <button >Complete</button></td>
+                    </tbody>
+                </table> -->
+            <!-- </div> -->
+        </div>
+        </form>
+        </div>
+    </main>
+
+<!-- FINISHED LISTS -->
+<main id="finished-component">
+<div class="project">
+    <h2 class="title">Finished Lists</h2>
+<form #todoListForm>
+<div class="todo">
+
+    <div class="space">
+        <!-- <label for="title">title2: </label> -->
+        <button class="btn" (click)="openFinishedForm()"><i class="material-icons">add_circle_outline</i></button>
+        <!-- <button class="add-list" (click)="addToList()">Add</button> -->
+    </div>
+    
+    <!-- <div> -->
+
+        <!-- Make ngif that will make the table appear -->
+        <ng-container *ngIf="finishedList.length >= 1">
+            <ng-container *ngFor="let item of finishedList">
+            <table>
+                <tbody id="tbody">
+                    <td style="width: 50%; font-size: larger;">{{item.title}}</td>
+                    <td><button id="edit">Edit</button>
+                        <button (click)="deleteFromFinishedList(item)">Delete</button>
+                        <button (click)="unfinishItem(item)" >Incomplete</button></td>
+                        <button class="btn1"><i class="material-icons">remove</i></button>
+                </tbody>
+            </table>
+        </ng-container>
+        </ng-container>
+
+        <!-- <table>
+            <tbody id="tbody">
+                <td style="width: 50%;">Watch movie</td>
+                <td><button id="edit">Edit</button>
+                    <button >Delete</button>
+                    <button >Complete</button></td>
+                
+                <td style="width: 50%;">Watch movie</td>
+                <td><button id="edit">Edit</button>
+                    <button >Delete</button>
+                    <button >Complete</button></td>
+            </tbody>
+        </table> -->
+    <!-- </div> -->
+</div>
+</form>
+</div>
+</main>
 </body>
+
+<app-form (sendItemToList)= "addToTodoList($event)"
+    [ngClass]="formStyle"
+    (closeForm) = 'closeForm()'
+    [isFinishedv2] = 'isFinishedv2'
+    [formItem] = 'itemToEdit'>
+
+</app-form>

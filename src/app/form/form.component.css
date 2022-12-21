@@ -41,3 +41,12 @@ h2 {
     padding: .5em 2em;
     margin: 0px auto;
 }
+
+.form-container-hidden{
+    display: none;
+}
+
+.form-container-shown{
+    display: block;
+}
+
