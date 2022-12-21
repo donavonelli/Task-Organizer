@@ -36,7 +36,7 @@
 
                                     <button class="btn2" (click)="editTodoItem(item)"><i class="material-icons">draw</i></button>
                                     <button class="btn3" (click)="deleteFromTodoList(item)"><i class="material-icons">delete_forever</i></button>
-                                    <button class="btn1" (click)="finishItem(item)"><i class="material-icons" >draw </i></button>
+                                    <button class="btn1" (click)="finishItem(item)"><i class="material-icons" >assignment_return </i></button>
                                 </div>
                             </li>
                         </ng-container>
@@ -62,19 +62,31 @@
     </div>
     
 
-        <ng-container *ngIf="finishedList.length >= 1">
+    <ng-container *ngIf="finishedList.length >= 1">
+        <ul class="notcomplete">
             <ng-container *ngFor="let item of finishedList">
-            <table>
-                <tbody id="tbody">
-                    <td style="width: 50%; font-size: larger;">{{item.title}}</td>
-                    <td><button id="edit">Edit</button>
-                        <button (click)="deleteFromFinishedList(item)">Delete</button>
-                        <button (click)="unfinishItem(item)" >Incomplete</button></td>
-                        <button class="btn1"><i class="material-icons">remove</i></button>
-                </tbody>
-            </table>
-        </ng-container>
-        </ng-container>
+                <li>
+                    <h4>{{item.title}}</h4>
+                    <ng-container *ngIf="item.urgent">
+                        <h5>URGENT</h5>
+                    </ng-container>
+                    <ng-container *ngIf="item.completeBy">
+                        <h4>{{item.completeBy}}</h4>
+                    </ng-container>
+                    <ng-container *ngIf="item.details">
+                        <p>{{item.details}}</p>
+                    </ng-container>
+                    <div class="button-container">
+
+                        <button class="btn2" (click)="editFinishedItem(item)"><i class="material-icons">draw</i></button>
+                        <button class="btn3" (click)="deleteFromFinishedList(item)"><i class="material-icons">delete_forever</i></button>
+                        <button class="btn1" (click)="unfinishItem(item)"><i class="material-icons" >assignment_return </i></button>
+                    </div>
+                </li>
+            </ng-container>
+        </ul>
+
+    </ng-container>
 
 
 </div>

@@ -55,6 +55,7 @@ export class BodyComponent  {
   editFinishedItem(newItem:any): void{
     this.itemToEdit = newItem
     this.openFinishedForm();
+    this.finishedList.splice(this.finishedList.indexOf(newItem), 1)
   }
 
   deleteFromFinishedList(item: any): void {
