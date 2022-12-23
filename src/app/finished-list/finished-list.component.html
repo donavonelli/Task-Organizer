@@ -1,23 +1,21 @@
 <main>
     <div class="project">
-        <h2 class="title">Finished Lists</h2>
+        <h2>Finished Lists</h2>
     <form #todoListForm>
     <div class="todo">
 
         <div class="space">
-            <!-- <label for="title">title2: </label> -->
+
             <input [(ngModel)]="title" id="title" name="title" class="add-todo" type="text"  placeholder="Enter to-do">
-            <!-- <button class="add-list" (click)="addToList()">Add</button> -->
+
         </div>
-        
-        <!-- <div> -->
 
             <!-- Make ngif that will make the table appear -->
             <ng-container *ngIf="finishedList.length >= 1">
                 <ng-container *ngFor="let item of finishedList">
                 <table>
                     <tbody id="tbody">
-                        <td style="width: 50%;">{{item.title}}</td>
+                        <td>{{item.title}}</td>
                         <td><button id="edit">Edit</button>
                             <button (click)="deleteFromList(item)">Delete</button>
                             <button (click)="finishItem($event)" >Complete</button></td>
@@ -25,21 +23,6 @@
                 </table>
             </ng-container>
             </ng-container>
-
-            <!-- <table>
-                <tbody id="tbody">
-                    <td style="width: 50%;">Watch movie</td>
-                    <td><button id="edit">Edit</button>
-                        <button >Delete</button>
-                        <button >Complete</button></td>
-                    
-                    <td style="width: 50%;">Watch movie</td>
-                    <td><button id="edit">Edit</button>
-                        <button >Delete</button>
-                        <button >Complete</button></td>
-                </tbody>
-            </table> -->
-        <!-- </div> -->
     </div>
     </form>
     </div>

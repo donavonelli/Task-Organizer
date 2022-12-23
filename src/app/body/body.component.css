@@ -1,25 +1,11 @@
-/* {
+* {
     margin: 0px;
     padding: 0px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-
 }
 
 body{
-    /* display: grid;
-    margin: 0;
-    grid-template-columns: 50% 50%; */
-    height: 100%; 
-    display: grid;
-    margin: 0;
-    grid-template-columns: 50% 50%;
-}
-
-#section-body{
-    display: grid;
-    margin: 0;
-    grid-template-columns: 50% 50%;
-    height: 100%;
+    background: linear-gradient(126deg, #af8a13 10%, #ce2323 60%, #cb36b5 90%);
+    background-repeat:no-repeat;
 }
 
 #to-do-component {
@@ -31,54 +17,31 @@ body{
 }
 
 /* LISTS */
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
-
-}
-
-body {
-    background-color: #c37171;
-    font-family:'Times New Roman', Times, serif
-}
 
 .project {
-    background: #c37171;
     display: flex;
     justify-content: center;
     align-items:center;
     flex-direction: column;
-    height: 100vh;
+    height: 50vh;
 }
 
-.title {
+h2 {
     font-size: 50px;
     font-weight: 200px;
-    color: #550b46;
+    color: black;
     letter-spacing: 4px;
 }
 
 .todo {
-    display: grid;
-    justify-content: center;
-    margin-left: 2em;
-    align-items: center;
-    padding: 20px;
-    box-shadow: 0px 10px 40px #ffc0cb;
+    padding: 30px;
+    box-shadow: 0px 10px 40px #4b09a7;
     border-radius: 10px;
-    grid-template-columns: 10% 80% 10%;
-    grid-template-rows: 10% 90%;
     width: 35em;
 }
 
 .space {
-    /* display: grid;
-    grid-template-columns: 5fr 1fr;
-    gap: 5px; */
     width: fit-content;
-    grid-column: 2/3;
-    grid-row: 1/2;
 }
 
 .add-todo {
@@ -86,8 +49,7 @@ body {
     border: none;
     border-radius: 10px;
     cursor: text;
-    background-color: antiquewhite;
-
+    background-color: #c5842e;
 }
 
 .table{
@@ -104,7 +66,7 @@ body {
 
 .delete {
     border: none;
-    background-color: antiquewhite;
+    background-color: rgb(0, 0, 0);
 
 }
 
@@ -161,7 +123,6 @@ body {
 
 .notcomplete {
     margin: 10px 15;
-    
 }
 
 h3 {
@@ -193,8 +154,6 @@ li {
     border-radius: 12px;
     list-style: none;
     border: 1px solid white;
-    grid-column: inherit;
-    grid-row: inherit;
 }
 
 #tbody{
@@ -204,7 +163,6 @@ li {
 }
 
 /* FORM */
-
 .form-container-shown{
     display: block;
     /* position: fixed; */
