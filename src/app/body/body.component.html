@@ -17,10 +17,14 @@
             <div class="space">
                 <button class="btn" (click)="openTodoForm()"><i class="material-icons">add_circle_outline</i></button>
             </div>
+<<<<<<< HEAD
     
                 <!-- Make ngif that will make the table appear -->
+=======
+            
+
+>>>>>>> 21635d7a4dddd0fd5c073c65860a76df545df4f8
                 <ng-container *ngIf="todoList.length >= 1">
-                    <!-- <h3>To Do List</h3> -->
                     <ul class="notcomplete">
                         <ng-container *ngFor="let item of todoList">
                             <li>
@@ -42,7 +46,13 @@
                             </li>
                         </ng-container>
                     </ul>
+<<<<<<< HEAD
                 </ng-container>
+=======
+
+                </ng-container>
+    
+>>>>>>> 21635d7a4dddd0fd5c073c65860a76df545df4f8
 
         </div>
         </form>
@@ -57,12 +67,13 @@
     <div class="todo">
 
     <div class="space">
-        <!-- <label for="title">title2: </label> -->
         <button class="btn" (click)="openFinishedForm()"><i class="material-icons">add_circle_outline</i></button>
-        <!-- <button class="add-list" (click)="addToList()">Add</button> -->
     </div>
+<<<<<<< HEAD
+=======
+    
+>>>>>>> 21635d7a4dddd0fd5c073c65860a76df545df4f8
 
-        <!-- Make ngif that will make the table appear -->
         <ng-container *ngIf="finishedList.length >= 1">
             <ng-container *ngFor="let item of finishedList">
             <table>
@@ -76,9 +87,17 @@
             </table>
         </ng-container>
         </ng-container>
+<<<<<<< HEAD
     </div>
     </form>
     </div>
+=======
+
+
+</div>
+</form>
+</div>
+>>>>>>> 21635d7a4dddd0fd5c073c65860a76df545df4f8
 </main>
 </body>
 
